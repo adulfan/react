@@ -4,16 +4,21 @@ import CounterButton from './components/Button';
 import ResetButton from './components/ResetBtn';
 import CounterResult from './components/Result';
 import logo from './logo.svg';
+import _ from 'lodash';
 
-export default class App extends React.Component {
+class BaseComponent extends React.Component {
+  bind(...methods) {
+    methods.forEach( (method) => this[method] = this[method].bind(this) );
+  }
+}
 
-  constructor() {
-    super();
+export default class App extends BaseComponent {
+  constructor(props) {
+    super(props);
     this.state = {
       counter: 0
     };
-    this.handleClick = this.handleClick.bind(this);
-    this.resetClick = this.resetClick.bind(this);
+    this.bind('handleClick', 'resetClick');
   }
   handleClick(increment) {
     let newCount = this.state.counter + increment;
@@ -22,23 +27,28 @@ export default class App extends React.Component {
   resetClick() {
     this.setState({ counter: 0 });
   }
+  renderButtons() {
+    return _.times(5, (i) => {
+      return (<CounterButton key={i} localHandleClick={this.handleClick} increment={(i === 0) ? 1 : i * 5} />);
+      }
+    );
+  }
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <div className="app">
+        <div className="app-header">
+          <img src={logo} className="app-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="App-intro">
-          My React Learning...
+        <p className="app-intro">
+          My React Learning!!!
         </p>
-        <CounterButton localHandleClick={this.handleClick} increment={1} />
-        <CounterButton localHandleClick={this.handleClick} increment={5} />
-        <CounterButton localHandleClick={this.handleClick} increment={10} />
-        <CounterButton localHandleClick={this.handleClick} increment={15} />
-        <CounterResult localCounter={this.state.counter} />
-        <ResetButton localHandleClick={this.resetClick} />
-        <img src={process.env.PUBLIC_URL + '/assets/images/e4f2b2db1af9e44c3aa4792ffa766fab.jpg'} alt="tesing env.property" />
+        <div className="app-content">
+          {this.renderButtons()}
+          <CounterResult localCounter={this.state.counter} />
+          <ResetButton localHandleClick={this.resetClick} />
+        </div>
+        <img src={process.env.PUBLIC_URL + '/assets/images/e4f2b2db1af9e44c3aa4792ffa766fab.jpg'} alt="tesing env.property" width="300" />
         <Footer dataText="Footer" />
       </div>
     );

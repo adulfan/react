@@ -1,8 +1,8 @@
 import React from 'react';
 
 export default class ResetButton extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       counter: 0
     };
@@ -13,7 +13,7 @@ export default class ResetButton extends React.Component {
   }
   render() {
     return (
-      <button onClick={this.localHandleClick}>Reset</button>
+      <button className="btn green" onClick={this.localHandleClick}>Reset</button>
     );
   }
 }

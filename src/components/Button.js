@@ -1,8 +1,8 @@
 import React from 'react';
 
 export default class CounterButton extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.localHandleClick = this.localHandleClick.bind(this);
   }
   localHandleClick() {
