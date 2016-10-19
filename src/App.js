@@ -3,6 +3,7 @@ import Footer from './components/Footer';
 import CounterButton from './components/Button';
 import ResetButton from './components/ResetBtn';
 import CounterResult from './components/Result';
+import CommentBox from './components/CommentBox';
 import logo from './logo.svg';
 import _ from 'lodash';
 
@@ -44,11 +45,14 @@ export default class App extends BaseComponent {
           My React Learning!!!
         </p>
         <div className="app-content">
-          {this.renderButtons()}
-          <CounterResult localCounter={this.state.counter} />
-          <ResetButton localHandleClick={this.resetClick} />
+          <section className="button-wrapper">
+            {this.renderButtons()}
+            <CounterResult localCounter={this.state.counter} />
+            <ResetButton localHandleClick={this.resetClick} />
+          </section>
+          <img src={process.env.PUBLIC_URL + '/assets/images/e4f2b2db1af9e44c3aa4792ffa766fab.jpg'} alt="tesing env.property" width="300" />
+          <CommentBox />
         </div>
-        <img src={process.env.PUBLIC_URL + '/assets/images/e4f2b2db1af9e44c3aa4792ffa766fab.jpg'} alt="tesing env.property" width="300" />
         <Footer dataText="Footer" />
       </div>
     );

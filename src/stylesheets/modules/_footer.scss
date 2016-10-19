@@ -1,9 +1,14 @@
-
 footer {
-  background: $red;
-  padding: 20px;
-  margin: 20px 0;
-  * {
-    color: $white;
+  &.site-footer {
+    background: $red;
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: $blue;
+    width: 100%;
+    * {
+      color: $white;
+    }
   }
 }

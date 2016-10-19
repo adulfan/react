@@ -14,7 +14,22 @@
     font-size: large;
   }
   .app-content {
-    margin: 20px 0;
+    max-width: 80%;
+    margin: 20px auto;
+    a {
+      color: $blue;
+    }
+    .button-wrapper {
+      border: solid 1px $blue;
+      padding: 20px;
+      margin: 10px;
+      p {
+        margin-bottom: 15px;
+      }
+      button:not(:last-child) {
+        margin-bottom: 2vh;
+      }
+    }
   }
 }
 
