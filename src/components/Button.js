@@ -1,16 +1,12 @@
 import React from 'react';
 
 export default class CounterButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.localHandleClick = this.localHandleClick.bind(this);
-  }
   localHandleClick() {
    this.props.localHandleClick(this.props.increment);
   }
   render() {
     return (
-      <button onClick={this.localHandleClick}>+ {this.props.increment}</button>
+      <button onClick={this.localHandleClick.bind(this)}>+ {this.props.increment}</button>
     );
   }
 }

@@ -1,10 +1,12 @@
-@import "vendor/reset";
-@import "utils/colors";
-@import "utils/mixins-utils";
-@import "utils/typography";
-@import "utils/buttons";
-@import "modules/main-content";
-@import "modules/commentbox";
-@import "modules/footer";
+@import "vendor/reset",
+        "utils/variables",
+        "utils/colors",
+        "utils/mixins-utils",
+        "utils/typography",
+        "utils/buttons",
+        "utils/form",
+        "modules/main-content",
+        "modules/commentbox",
+        "modules/footer";
 
 

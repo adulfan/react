@@ -1,6 +1,8 @@
-h1 {font-size: 35px}
-h2 {font-size: 25px}
-h3 {font-size: 20px}
-h4 {font-size: 18px}
-h5 {font-size: 16px}
-h6 {font-size: 14px}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+
+h1 {font-size: rem-calc(35)}
+h2 {font-size: rem-calc(25)}
+h3 {font-size: rem-calc(20)}
+h4 {font-size: rem-calc(18)}
+h5 {font-size: rem-calc(16)}
+h6 {font-size: rem-calc(14)}

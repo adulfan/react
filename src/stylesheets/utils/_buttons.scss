@@ -1,5 +1,5 @@
-//default button style.
-.btn {
+//default placeholder for button style.
+%btn {
   display: inline-block;
   padding: .938em 1.875em;
   color: $white;
@@ -37,15 +37,17 @@
 
 //button element extends .btn class for default buttons.
 button {
-  @extend .btn;
-  &.green {
+  @extend %btn;
+}
+.btn {
+  &-green {
     @include button-bg($green);
   }
-  &.blue {
+  &-blue {
     @include button-bg(#3498db);
 
   }
-  &.red {
+  &-red {
     @include button-bg($red);
   }
 }

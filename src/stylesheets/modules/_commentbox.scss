@@ -1,11 +1,28 @@
-.comment-content {
-  padding: 20px;
-  border: solid 2px white;
-  background: lightblue;
-  width: 50%;
-  margin: 0 auto;
-  text-align: left;
+.comment-box {
+  border: solid 3px lightblue;
+  padding: rem-calc(20);
+  margin-bottom: 2vh;
   p {
-    margin-bottom: 10px;
+    margin-bottom: rem-calc(10);
+  }
+  h2, h3 {
+    margin-bottom: rem-calc(10);
+  }
+  .comment-content {
+    padding: rem-calc(20);
+    border: solid 2px white;
+    background: lightblue;
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+    border-radius: rem-calc(10);
+    .comment-list {
+      border-bottom: solid 2px #fff;
+      margin-bottom: rem-calc(20);
+      padding-bottom: rem-calc(10);
+    }
+  }
+  .comment-node {
+    margin-top: rem-calc(20);
   }
 }

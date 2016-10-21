@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1388534400000,
+        "author": "Pete Hunt",
+        "body": "Hey there!"
+    },
+    {
+        "id": 1420070400000,
+        "author": "Paul O’Shannessy",
+        "body": "React is *great*!"
+    },
+    {
+        "id": 1464988635157,
+        "author": "ben",
+        "body": "*abc*"
+    },
+    {
+        "id": 1464988636500,
+        "author": "ben",
+        "body": "*abc*"
+    },
+    {
+        "id": 1464988717637,
+        "author": "evil",
+        "body": "<a href=\"javascript:alert(1)\">alert(1)</a>"
+    }
+]

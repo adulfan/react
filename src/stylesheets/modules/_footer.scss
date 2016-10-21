@@ -2,11 +2,9 @@ footer {
   &.site-footer {
     background: $red;
     padding: 20px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
     background: $blue;
     width: 100%;
+    height: 50px;
     * {
       color: $white;
     }
