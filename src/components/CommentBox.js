@@ -14,7 +14,7 @@ export default class CommentBox extends React.Component {
   _getComments() {
     return this.state.comments.map((comment) => {
       return (
-        <CommentList author={comment.author} body={comment.body} key={comment.id} />
+        <CommentList author={comment.author} body={comment.body} key={comment.id} id={comment.id} onDelete={this._deleteComment.bind(this)}/>
       )
     });
   }
@@ -42,6 +42,17 @@ export default class CommentBox extends React.Component {
     }
   }
 
+  _deleteComment(commentID) {
+    if (!commentID) {
+      return;
+    }
+
+    const comments = this.state.comments.filter(
+      comment => comment.id !== commentID
+    );
+    this.setState({ comments });
+  }
+
   localHandleClick() {
     this.setState({
       showComments: !this.state.showComments,
@@ -65,6 +76,7 @@ export default class CommentBox extends React.Component {
   componentWillUnmount() {
     clearInterval(this._timer);
   }
+
   render() {
     const comments = this._getComments();
     let commentNodes;
